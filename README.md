@@ -47,30 +47,35 @@ Testi discordis küsimärki sisestades!
 ## 🎲 3. Märgusõnadele vastamine
 Liigu faili __response.py__
 
-1. 
+1. Lisa __main.py__ faili __on_message()__ meetodi alla response'i saamine ning vastuse saatmine.
+2. Liigu __response.py__ faili ning lisa responses muutujasse uued commandid ja vastused.
+3. Saada tagasi õige vastus kasutaja sisendile __get_response()__ meetodis.
+4. Lisa __roll_dice()__ meetodis õige vahemik (nt on tavlise täringu nmbrite vahemik 1-6).
 
-2. Lisa __roll_dice()__ meetodisse õige vahemik (nt on tavlise täringu nmbrite vahemik 1-6)
 
-
-Seerjärel on sul vaja __main.py__ failis kasutada __pathlib.Path__ abil kõigi __.py__ failide otsimiseks ja nende laadimiseks load_extension() kaudu, et bot leiaks __cogs__ kasuta.
-Testi discordis __?roll__ ja __responses__ sõnastiku võtmeid kirjutades!
+<!-- Seerjärel on sul vaja __main.py__ failis kasutada __pathlib.Path__ abil kõigi __.py__ failide otsimiseks ja nende laadimiseks load_extension() kaudu, et bot leiaks __cogs__ kasuta.
+Testi discordis __?roll__ ja __responses__ sõnastiku võtmeid kirjutades! -->
 
 ## 🐶 4. ASCII koer
-Suundu __cogs__ kausta ja sealt leiad faili __quoting.py__. 
-Kõigepealt lisa `__init__(self, bot)` meetodisse viide botile (selleks et saaks boti kasutada ka siin failis). Vihje: viide botile on `bot`, mis on `__init__` meetodi üks parameetritest.
+<!-- Suundu __cogs__ kausta ja sealt leiad faili __quoting.py__.  -->
+
 
 Suundu __cogs__ kausta ja sealt leiad faili __dog.py__. 
 
-1. Kõigepealt kontrolli, kas fail __dog__ eksisteerib ja lisa logimine juhuks, kui fail jääb leidmata.
+1. Kõigepealt lisa `__init__(self, bot)` meetodisse viide botile (selleks et saaks boti kasutada ka __dog.py__ failis). Vihje: viide botile on `bot`, mis on `__init__` meetodi üks parameetritest (parameet er on sulgude sees).
+2. Kontrolli, kas fail __dog__ eksisteerib (see peaks olema samas kaustas kus __main.py__).
+3. Lisa õige faili nimi, loe andmeid failist ning saada tagasi ASCII pilt koerast. 
 
-2. Lisa uus käsk meetodi __create_dog__, mis loeb ASCII-kunsti __dog__ failist.
 
-Testi discordis __?mouse__ pannes!
+Testi discordis __?mouse__ pannes (või see mis sa käsu nimeks panid)!
 
 ## 📜 5. Tsiteerimine
-Failist __quotes.py__ leiad tsitaatide loend.
+Failist __quotes.py__ leiad tsitaatide loendi.
 
-Lisa oma lemmiktsitaadid järjendisse __quotes__.
+1. Lisa oma lemmiktsitaadid järjendisse __quotes__.
+2. Mine faili __cogs__ kausta __quoting.py__ faili ning lisa viide botile `__init__(self, bot)` meetodis.
+3. Saada botiga suvaline tsitaat kasutades `get_quote()` meetodit. Sõnumi saatmine oli täpsemini kirjas neljandas ülesandes.
+4. Lisa funktsiooni registreerimine `setup()` meetodis. Vaata kuidas __dog.py__ failis `setup()` tehtud on (ning asenda `Dog` objekt `Quotes` objektiga)
 
 Testi discordis __?quote__ pannes!
 

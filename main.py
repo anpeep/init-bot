@@ -11,11 +11,19 @@ intents = Intents.default()
 intents.message_content = True
 client = commands.Bot(command_prefix="?", intents=intents)
 
-""" TODO 1: Print a message that the bot is up and running, bots name is stored in client.name """
 @client.event
 async def on_ready():
+    """
+    TODO 1: Print a message that the bot is up and running, bots name is stored in client.user 
+    """
     BOT_NAME = "[GET THE BOT NAME]"
     print(BOT_NAME, "is now running!")
+    
+    for file in pathlib.Path("cogs").rglob("*.py"):
+        try:
+            await client.load_extension(".".join(file.with_suffix("").parts))
+        except Exception as e:
+            print("Couldn't load cogs file (if you haven't gotten to task 4, ignore this error)\n", e)
 
 
 @client.event
@@ -28,7 +36,7 @@ async def on_message(message: Message):
     # if .startswith("?"):
     #     await client.process_commands(message)
     #     return
-    # else:  # If you are done with task 2, remove this and the following line
+    # elif message.author.id != client.user.id:  # If you are done with task 2, remove this and the following line
     #     await message.channel.send()  # Add in between these brackets the response to the message, for example "Hello!"
     
     """
@@ -36,10 +44,8 @@ async def on_message(message: Message):
     """
     # response = get_response()  # Add in between these brackets the message that the bot received (look at task 2)
     # if response:
-    #     await.message.channel.send()  # Add the repsonse that we got from get_response()
-    
-    
-    ...
+    #     await message.channel.send()  # Add the repsonse that we got from get_response()
+
 
 def main():
     token = config.get("TOKEN")

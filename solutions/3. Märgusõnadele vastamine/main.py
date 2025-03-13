@@ -1,9 +1,3 @@
-@client.event
-async def on_message(message: Message):
-    if message.content.startswith("?"):
-        await client.process_commands(message)
-        return
-
-    response = get_response(message.content)
-    if response:
-        await message.channel.send(response)
+response = get_response(message.content)  # Add in between these brackets the message that the bot received (look at task 2)
+if response:
+    await message.channel.send(response)  # Add the repsonse that we got from get_response()
