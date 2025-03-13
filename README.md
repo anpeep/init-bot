@@ -12,7 +12,7 @@
 
 ## Sissejuhatus
 Rahategemine pole kunagi olnud lihtsam!
-Täna proovime kätt nii dicord.py teegi kasutamise, .env faili loomise kui ka cogside abil koodi modulleerimisega.
+Täna proovime kätt nii discord.py teegi kasutamise, .env faili loomise kui ka cogs'ide abil koodi modulleerimisega.
 Ülesannete näidislahendused leiad solutions kaustast!
 
 ## Setup
@@ -39,10 +39,7 @@ __BotName#1234 is now running!__
 ## 💬 2. Sõnumite lugemine
 Pane bot reageerima sõnumitele kasutades __on_message()__ meetodit __main.py__ failis.
 
-Lisa tingimus, et bot vastaks sõnumitele vaid siis, kui need EI alga küsimärgiga.
-Sõnumit saab saata järgneva käsuga: `await message.channel.send(response)`, kus response on näiteks "Hello".
-
-Testi discordis küsimärki sisestades!
+Testi discordis küsimärki sisestades (nt ?help)!
 
 ## 🎲 3. Märgusõnadele vastamine
 Liigu faili __response.py__
@@ -50,7 +47,8 @@ Liigu faili __response.py__
 1. Lisa __main.py__ faili __on_message()__ meetodi alla response'i saamine ning vastuse saatmine.
 2. Liigu __response.py__ faili ning lisa responses muutujasse uued commandid ja vastused.
 3. Saada tagasi õige vastus kasutaja sisendile __get_response()__ meetodis.
-4. Lisa __roll_dice()__ meetodis õige vahemik (nt on tavlise täringu nmbrite vahemik 1-6).
+
+4. Lisa __roll_dice()__ meetodis õige vahemik (nt on tavalise täringu numbrite vahemik 1-6).
 
 
 <!-- Seerjärel on sul vaja __main.py__ failis kasutada __pathlib.Path__ abil kõigi __.py__ failide otsimiseks ja nende laadimiseks load_extension() kaudu, et bot leiaks __cogs__ kasuta.
@@ -62,7 +60,7 @@ Testi discordis __?roll__ ja __responses__ sõnastiku võtmeid kirjutades! -->
 
 Suundu __cogs__ kausta ja sealt leiad faili __dog.py__. 
 
-1. Kõigepealt lisa `__init__(self, bot)` meetodisse viide botile (selleks et saaks boti kasutada ka __dog.py__ failis). Vihje: viide botile on `bot`, mis on `__init__` meetodi üks parameetritest (parameet er on sulgude sees).
+1. Kõigepealt lisa `__init__(self, bot)` meetodisse viide botile (selleks et saaks boti kasutada ka __dog.py__ failis). Vihje: viide botile on `bot`, mis on `__init__` meetodi üks parameetritest (parameeter on sulgude sees).
 2. Kontrolli, kas fail __dog__ eksisteerib (see peaks olema samas kaustas kus __main.py__).
 3. Lisa õige faili nimi, loe andmeid failist ning saada tagasi ASCII pilt koerast. 
 
@@ -73,7 +71,7 @@ Testi discordis __?mouse__ pannes (või see mis sa käsu nimeks panid)!
 Failist __quotes.py__ leiad tsitaatide loendi.
 
 1. Lisa oma lemmiktsitaadid järjendisse __quotes__.
-2. Mine faili __cogs__ kausta __quoting.py__ faili ning lisa viide botile `__init__(self, bot)` meetodis.
+2. Mine __cogs__ kausta __quoting.py__ faili ning lisa viide botile `__init__(self, bot)` meetodis.
 3. Saada botiga suvaline tsitaat kasutades `get_quote()` meetodit. Sõnumi saatmine oli täpsemini kirjas neljandas ülesandes.
 4. Lisa funktsiooni registreerimine `setup()` meetodis. Vaata kuidas __dog.py__ failis `setup()` tehtud on (ning asenda `Dog` objekt `Quotes` objektiga)
 

@@ -33,18 +33,16 @@ async def on_message(message: Message):
     The received message is stored in message.content and we want to check if it starts with the question mark
     If the message doesn't start with a question mark, then answer to that message (this is just for testing)
     """
-    # if .startswith("?"):
+    # if .startswith("?"):  # TODO: Check if the message.content starts with a question mark
     #     await client.process_commands(message)
     #     return
-    # elif message.author.id != client.user.id:  # If you are done with task 2, remove this and the following line
-    #     await message.channel.send()  # Add in between these brackets the response to the message, for example "Hello!"
-    
+
     """
     TODO 3.1: Get the response and answer to that response.
     """
-    # response = get_response()  # Add in between these brackets the message that the bot received (look at task 2)
+    # response = get_response()  # TODO: Add in between these brackets the message that the bot received (look at task 2)
     # if response:
-    #     await message.channel.send()  # Add the repsonse that we got from get_response()
+    #     await message.channel.send()  # TODO: Add the repsonse that we got from get_response()
 
 
 def main():
